@@ -1,0 +1,18 @@
+<div *ngIf="user.uid!='-1'">
+    <h2 class="title">Profile details</h2>
+    <div class="grid-container">
+        <p>Name:</p>
+        <p>{{user.displayName}}</p>
+        <p>Email:</p>
+        <p>{{user.email}}</p>
+        <p>HighScore:</p>
+        <p>{{user.highScore}}</p>
+        <p>Leaderboard:</p>
+        <p><a routerLink="/leaderboard" class="link">Access the leaderboard here</a></p>
+        <p *ngIf="user.admin===true">Admin: </p>
+        <p><a routerLink="/admin" *ngIf="user.admin===true" class="link">Access the admin dashboard here</a></p>
+    </div>
+</div>
+<div *ngIf="user.uid=='-1'" class="profile-error">
+    <h2>You have to be logged in to use this feature!</h2>
+</div>

@@ -1,0 +1,17 @@
+@mixin button($color: blue){
+    background-color: $color;
+    color: white;
+    font-weight: bold;
+    width: 15%;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid $color;
+    transition: background-color 0.2s;
+    transition: color 0.2s;
+}
+
+@mixin button-hover($color: blue){
+    background-color: white;
+    color: $color;
+}

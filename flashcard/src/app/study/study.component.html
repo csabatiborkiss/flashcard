@@ -1,0 +1,13 @@
+<h2 class="flashcard-info">Flashcard {{currentFlashcardIndex+1}} of {{numOfFlashcards}}</h2>
+<div class="flashcard-container" [class.animate]="canAnimate" (click)="getNextFlashcard()">
+    <span class="flashcard-datapiece"><img class="flag" src="../../assets/flags/hun.webp">Hungarian: {{currentFlashcard.hungarianPhrase}}</span>
+    <span class="flashcard-datapiece"><img class="flag" src="../../assets/flags/uk.webp">English: {{currentFlashcard.englishPhrase}}</span>
+    <span class="flashcard-datapiece" *ngIf="currentFlashcard.difficulty==1">Difficulty: &#9679;</span>
+    <span class="flashcard-datapiece" *ngIf="currentFlashcard.difficulty==2">Difficulty: &#9679; &#9679;</span>
+    <span class="flashcard-datapiece" *ngIf="currentFlashcard.difficulty==3">Difficulty: &#9679; &#9679; &#9679;</span>
+</div>
+
+<div class="nav-button-container">
+    <button class="nav-button" (click)="chooseAnotherCategory()">Choose another category</button>
+</div>
+

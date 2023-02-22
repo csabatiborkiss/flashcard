@@ -1,0 +1,40 @@
+@use '../../assets/styles/mixins' as m;
+
+table{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: rgba(163, 163, 163, 0.7);
+}
+
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-button{
+    @include m.button;
+    margin: 0 auto;
+    margin-top: 30px;
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+    display: block;
+}
+
+.back-button:hover{
+    @include m.button-hover;
+}

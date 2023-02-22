@@ -1,0 +1,16 @@
+<h2>Hall of fame</h2>
+
+<table>
+    <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Highscore</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{users.indexOf(user)+1}}</td>
+        <td>{{user.displayName}}</td>
+        <td>{{user.highScore}}</td>
+    </tr>
+</table>
+
+<button type="button" class="back-button" (click)="goBack()">Go back</button>

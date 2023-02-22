@@ -1,0 +1,40 @@
+span::before{
+    content: "With this site you can improve your language skills while having loads of fun. You can select a category and get to studying right now\. Set new high scores and compete for a top spot on the leaderboard\! You only need a Google account\.";
+    animation: animate infinite 40s;
+}
+
+@keyframes animate {
+  
+    0% {
+        content: "With this site you can improve your language skills while having loads of fun. You can select a category and get to studying right now\. Set new high scores and compete for a top spot on the leaderboard\! You only need a Google account\.";
+    }
+
+    33% {
+        content: "Using study mode there is no pressure, you can learn as much as you wish to. Signing in is not necessary. You will see the phrases in both languages and their difficulty level\.";
+    }
+
+    66% {
+        content: "Inquiry mode is where the challenge is. You will only see the phrase one language at a time and you only get one flip. After that you will have to give an answer\. A score will be calculated based on your performance and the difficulty of the flashcards\. When  you have finished you can choose to try again, get new cards or pick another category altogether\. Signing in is not necessary, but recommended.";
+    }
+}
+
+.welcome{
+    margin-top: 70px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.tips-title{
+    margin-top: 70px;
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 25px;
+}
+
+.text-container{
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+    margin-left: 40px;
+    font-size: 20px;
+}

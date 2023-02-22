@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "flashcard-41692": {
+      "hosting": {
+        "flashcard": [
+          "flashcard-41692"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "flashcard-41692"
+  }
+}

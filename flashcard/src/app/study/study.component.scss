@@ -1,0 +1,88 @@
+@use '../../assets/styles/mixins' as m;
+
+.flashcard-container{
+    border: 1px black solid;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+@keyframes slide-right{
+    from{
+        opacity: 1;
+        color: transparent;
+        content: none;
+        visibility: hidden;
+    }
+
+    99%{
+        color: transparent;
+        content: none;
+        
+    }
+
+    to{
+        transform: translateX(200px);
+        opacity: 0;
+        color: black;
+    }
+}
+
+.animate:not(:active){
+    animation-name: slide-right;
+    animation-duration: 0.4s;
+}
+
+.animate:active{
+    opacity: 1;
+}
+
+
+.flashcard-datapiece{
+    display: block;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.flag {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+.mock-flashcard-container{
+    border: 1px black solid;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.flashcard-info{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.nav-button{
+    @include m.button;
+    margin: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.nav-button:hover{
+    @include m.button-hover;
+}
+
+.nav-button-container{
+    text-align: center;
+} 

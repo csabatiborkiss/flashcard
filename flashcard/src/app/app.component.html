@@ -1,0 +1,10 @@
+<a routerLink="/"><h1>Flashcards</h1></a>
+<nav>
+  <div class="nav-container">
+    <a class="link" [class.active-link]="activeSite===1" routerLink="/study/categories">Study</a>
+    <a class="link" [class.active-link]="activeSite===2" routerLink="/inquiry/categories">Inquiry</a>
+    <a class="link" [class.active-link]="activeSite===3" routerLink='/profile'>Profile</a>
+    <div class="link-container"><app-signin></app-signin></div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

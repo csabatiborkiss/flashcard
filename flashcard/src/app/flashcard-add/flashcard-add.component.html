@@ -1,0 +1,25 @@
+<div class="flashcard-container">
+    <div *ngIf="flashcard">
+        <h2>Flashcard Details</h2>
+        <div class="error-container" *ngIf="error">Error! Make sure to fill all boxes correctly!</div>
+        <div>id: {{flashcard.id}}</div>
+        <div class="input-container">
+          <label for="flashcard-hungarian">Hungarian phrase: </label>
+          <input id="flashcard-hungarian" [(ngModel)]="flashcard.hungarianPhrase" placeholder="Hungarian phrase"/>
+        </div>
+        <div class="input-container">
+            <label for="flashcard-english">English phrase: </label>
+            <input id="flashcard-english" [(ngModel)]="flashcard.englishPhrase" placeholder="English phrase"/>
+          </div>
+          <div class="input-container">
+            <label for="flashcard-category">Category: </label>
+            <input id="flashcard-category" [(ngModel)]="flashcard.category" placeholder="Category"/>
+          </div>
+          <div class="input-container">
+            <label for="flashcard-difficulty">Difficulty: </label>
+            <input id="flashcard-difficulty" [(ngModel)]="flashcard.difficulty" placeholder="Difficulty"/>
+          </div>
+          <button type="button" class="add-button" (click)="addFlashcard()">Add flashcard</button>
+        <button type="button" class="back-button" (click)="goBack()">Go back</button>
+      </div>
+</div>

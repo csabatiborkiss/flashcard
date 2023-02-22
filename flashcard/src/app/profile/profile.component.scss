@@ -1,0 +1,39 @@
+@import '../../assets/styles/links';
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin-left: 30%;
+    row-gap: 20px;
+
+    p{
+      display: grid;
+      align-items: center;
+    }
+}
+
+.title{
+    width: 60%;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.link{
+
+    background-color: rgb(163, 163, 163);
+    border-radius: 5px;
+    padding: 20px;
+    transition: opacity 0.15s;
+    display: inline-block;
+    text-align: center;
+}
+
+.link:hover{
+    opacity: 0.7;
+}
+
+.profile-error{
+  text-align: center;
+  margin-top: 50px;
+}

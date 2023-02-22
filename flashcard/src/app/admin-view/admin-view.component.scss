@@ -1,0 +1,89 @@
+@use '../../assets/styles/mixins' as m;
+
+.grid-container{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.flashcard-datapiece{
+    display: block;
+}
+
+.flashcard-container{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.flashcard-datapiece {
+    padding: 5px;
+    margin: 3px;
+}
+
+
+.edit-link { 
+    margin: 5px;
+    padding: 7px;
+    @include m.button;
+}
+
+.edit-link:hover{
+  @include m.button-hover;
+}
+
+.delete-button{
+  @include m.button($color: red);
+  padding: 7px;
+  margin: 3px;
+  height: 33px;
+  width: 70px;
+  font-size: 16px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover{
+  @include m.button-hover($color: red);
+  
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+  
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+  
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.add-prompt{
+  display: table;
+  transition: font-size 0.5s;
+  font-size: 20px;
+
+  a{
+    text-align:center; 
+    vertical-align: middle;
+    display: table-cell;  
+  }
+
+  @import '../../assets/styles/links';
+  
+  a:hover {
+    cursor: pointer;
+  }
+}
+
+.add-prompt:hover{
+  font-size: 30px;
+}
+
+

@@ -1,0 +1,150 @@
+@use '../../assets/styles/mixins' as m;
+
+.flashcard-container{
+    border: 1px black solid;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.congrats{
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.flashcard-datapiece{
+    display: block;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.flag {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.buttons-container{
+    padding: 20px;
+    text-align: center;
+
+    button{
+        margin: 20px;
+    }
+
+    .correct-button{
+        @include m.button($color: green);
+        margin-bottom: 2px;
+        cursor: pointer;
+        margin-right: 5px;
+        padding: 7px;
+        font-size: 16px;
+    }
+
+    .incorrect-button{
+        @include m.button($color: red);
+        padding: 7px;
+        margin: 3px;
+        font-size: 16px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .correct-button:hover{
+        @include m.button-hover($color: green);
+    }
+
+    .incorrect-button:hover{
+        @include m.button-hover($color: red);
+    }
+}
+
+.stats-container{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 50px;
+    text-align: center;
+    span{
+        margin: 10px;
+    }
+}
+
+.nav-button{
+    @include m.button;
+    margin: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.nav-button:hover{
+    @include m.button-hover;
+}
+
+.nav-button-container{
+    text-align: center;
+}
+
+@keyframes flip{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+
+.animate:not(:active){
+    animation-name: flip ;
+    animation-duration: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.animate:active{
+    opacity: 1;
+
+}
+
+.baskets-container{
+
+    div{
+        display: inline-block;
+        margin: 0px 200px;
+    }
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+
+    img{
+        width: 100px;
+        height: 200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+  #correct-basket{
+    display: none;
+  }
+
+  #incorrect-basket{
+    display: none;
+  }
+}

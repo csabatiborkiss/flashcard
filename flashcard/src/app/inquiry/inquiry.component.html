@@ -1,0 +1,39 @@
+<div *ngIf="isGameOver">
+    <h2 class="congrats">Congratulations! <span *ngIf="newHighScore">New Highscore!</span> Your final score:</h2>
+</div>
+
+<div class="stats-container">
+    <span>Card: {{flashcards.length}}/{{currentFlashcardIndex+1}}</span>
+    <span>Score: {{score}}</span>
+</div>
+
+<div *ngIf="!isGameOver">
+    <div class="flashcard-container" [class.animate]="canAnimate" (click)="flipFlashcard()">
+        <span class="flashcard-datapiece" *ngIf="!flipped"><img class="flag" src="../../assets/flags/hun.webp">Hungarian: {{currentFlashcard.hungarianPhrase}}</span>
+        <span class="flashcard-datapiece" *ngIf="flipped"><img class="flag" src="../../assets/flags/uk.webp">English: {{currentFlashcard.englishPhrase}}</span>
+        <span class="flashcard-datapiece" *ngIf="currentFlashcard.difficulty==1">Difficulty: &#9679;</span>
+        <span class="flashcard-datapiece" *ngIf="currentFlashcard.difficulty==2">Difficulty: &#9679; &#9679;</span>
+        <span class="flashcard-datapiece" *ngIf="currentFlashcard.difficulty==3">Difficulty: &#9679; &#9679; &#9679;</span>
+    </div>
+    <div *ngIf="flipped" class="buttons-container">
+        <button class="correct-button" (click)="correct()">Correct</button>
+        <button class="incorrect-button" (click)="incorrect()">Incorrect</button>
+    </div>
+</div>
+
+<div class="nav-button-container" *ngIf="isGameOver">
+    <button class="nav-button" (click)="retryWithSameCards()">Retry with same cards</button>
+    <button class="nav-button" (click)="retryWithNewCards()">Retry with new cards</button>
+    <button class="nav-button" (click)="chooseAnotherCategory()">Choose another category</button>
+</div>
+
+<div class="baskets-container">
+    <div>
+        <img src="../../assets/images/green-basket.jpg" alt="green-basket" id="correct-basket">
+        <p>Correct guesses: {{correctGuesses}}</p>
+    </div>
+    <div>
+        <img src="../../assets/images/red-basket.jpg" alt="red-basket" id="incorrect-basket">
+        <p>Incorrect guesses: {{incorrectGuesses}}</p>
+    </div>
+</div>

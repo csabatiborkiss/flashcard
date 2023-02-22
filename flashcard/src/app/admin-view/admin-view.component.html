@@ -1,0 +1,17 @@
+<div class="grid-container">
+    <div class="flashcard-container add-prompt">
+        <a routerLink="/add">Add a new flashcard</a>
+    </div>
+    <div class="flashcard-container" *ngFor="let flashcard of flashcards">
+        <div class="flashcard-data-container">
+            <span class="flashcard-datapiece">id: {{flashcard.id}}</span>
+            <span class="flashcard-datapiece">hungarian: {{flashcard.hungarianPhrase}}</span>
+            <span class="flashcard-datapiece">english: {{flashcard.englishPhrase}}</span>
+            <span class="flashcard-datapiece">category: {{flashcard.category}}</span>
+            <span class="flashcard-datapiece">difficulty: {{flashcard.difficulty}}</span>
+        </div>
+        
+        <a routerLink="/flashcard/{{flashcard.id}}" class="edit-link">Edit</a>
+        <button class="delete-button" type="button" (click)="deleteFlashcard(flashcard.id)">Delete</button>
+    </div>
+</div>

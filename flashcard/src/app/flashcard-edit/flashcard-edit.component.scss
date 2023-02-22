@@ -1,0 +1,47 @@
+@use '../../assets/styles/mixins' as m;
+
+.flashcard-container{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.error-container{
+    background-color: red;
+    border-radius: 5px;
+    width: 75%;
+    color: white;
+    font-weight: bold;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.input-container{
+    padding: 5px;
+    margin: 5px;
+}
+
+.back-button{
+    @include m.button;
+    margin-bottom: 2px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.back-button:hover{
+    @include m.button-hover;
+}
+
+.edit-button{
+    @include m.button($color: green);
+    margin-bottom: 2px;
+    cursor: pointer;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.edit-button:hover{
+    @include m.button-hover($color: green);
+}
+
